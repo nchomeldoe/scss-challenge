@@ -1,0 +1,78 @@
+@use "./variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.country-card {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &--border {
+    border: 5px solid $decoration-color;
+  }
+
+  .country-card__text {
+    margin: $basic-spacing;
+
+    .country-card__heading {
+      display: flex;
+      justify-content: space-between;
+      .country-card__tags {
+        display: flex;
+        align-items: flex-start;
+        padding-top: $basic-spacing;
+
+        .country-card__tag {
+          margin-left: $basic-spacing;
+          padding: 4px 8px;
+          border-radius: 12px;
+          border: none;
+          background-color: darkgray;
+          &--active {
+            background-color: $decoration-color;
+          }
+          &--hidden {
+            display: none;
+          }
+        }
+      }
+      .country-card__name {
+        padding-bottom: 3 * $basic-spacing;
+        font-size: $font-size-large;
+      }
+    }
+
+    .country-card__description {
+      line-height: 1.8;
+      padding-bottom: 2 * $basic-spacing;
+      font-size: $font-size-small;
+    }
+  }
+
+  .country-card__footer {
+    margin: $basic-spacing;
+    button {
+      padding: $button-padding;
+      border: $button-border;
+    }
+    .country-card__book-button {
+      background-color: $secondary-color;
+      color: $primary-color;
+      margin-right: $basic-spacing;
+      &:hover {
+        background-color: $primary-color;
+        color: $secondary-color;
+      }
+    }
+    .country-card__info-button {
+      &:hover {
+        background-color: $secondary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
